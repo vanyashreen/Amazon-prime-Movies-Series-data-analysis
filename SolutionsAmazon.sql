@@ -65,7 +65,6 @@ CREATE TABLE WatchHistory (
 );
 
 -- =====================
--- BATCH: Content (200+ records)
 -- =====================
 INSERT INTO Content (content_id,title,type,genre,release_year,duration_minutes,imdb_rating,language) VALUES
 (1,'The Boys','Series','Action, Superhero, Dark Comedy',2019,NULL,8.7,'English'),
@@ -270,7 +269,6 @@ INSERT INTO Content (content_id,title,type,genre,release_year,duration_minutes,i
 (200,'Dune: Part Two','Movie','Sci-Fi, Adventure',2024,155,7.9,'English');
 
 -- =====================
--- BATCH: Actors (150+ records)
 -- =====================
 INSERT INTO Actors (actor_id,actor_name,nationality) VALUES
 (1,'Karl Urban','New Zealand'),
@@ -425,7 +423,6 @@ INSERT INTO Actors (actor_id,actor_name,nationality) VALUES
 (150,'Tommy Lee Jones','USA');
 
 -- =====================
--- BATCH: Content_Actors mappings (300+ records)
 -- =====================
 INSERT INTO Content_Actors (id,content_id,actor_id,role_name) VALUES
 (1,1,2,'Homelander'),
@@ -633,7 +630,6 @@ INSERT INTO Content_Actors (id,content_id,actor_id,role_name) VALUES
 (203,200,36,'Paul Atreides');
 
 -- =====================
--- BATCH: Users (120+)
 -- =====================
 INSERT INTO Users (user_id,name,email,country,join_date) VALUES
 (1,'Rahul Mehta','rahul.mehta@example.com','India','2020-01-15'),
@@ -842,11 +838,7 @@ INSERT INTO Ratings (rating_id,content_id,user_id,rating,review,rating_date) VAL
 (49,49,31,8.4,'Dark, intense', '2019-10-10'),
 (50,50,32,7.4,'Stylish action', '2014-11-11');
 
--- (More ratings up to 220 for variety; omitted here for brevity in preview but included in full dump)
 
--- =====================
--- BATCH: WatchHistory (200+ records)
--- =====================
 INSERT INTO WatchHistory (watch_id,user_id,content_id,watched_on,progress_percent) VALUES
 (1,1,1,'2020-03-11',100),
 (2,2,1,'2020-03-12',50),
@@ -897,9 +889,6 @@ BEGIN
 END $$
 DELIMITER ;
 
--- =====================
--- SAMPLE ANALYSIS QUERIES
--- =====================
 -- Top 10 highest-rated content
 SELECT title, imdb_rating FROM Content ORDER BY imdb_rating DESC LIMIT 10;
 
