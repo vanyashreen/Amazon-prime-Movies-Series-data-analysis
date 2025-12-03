@@ -83,6 +83,3 @@ Tracks user watch activity.
 * `watched_on` (DATETIME)
 * `progress_minutes` (INT)
 
-
-**Project Version:** 1.0
-**Date:** 2025-12-03
